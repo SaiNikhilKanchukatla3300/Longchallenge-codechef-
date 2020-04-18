@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+using namespace std;
+#define ll long long
+main() 
+{ ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+int t,n,i,m,c;
+cin>>t;
+while(t--){ m=INT_MAX; c=0;
+    cin>>n; vector <int> v(n);
+    for(i=0;i<n;i++){
+        cin>>v[i];
+        if(i<5){
+             if(v[i]<m) {
+                m=v[i];
+                c++;
+            }
+        }
+        else{
+            m=*min_element(v.begin()+i-5,v.begin()+i);
+            if(v[i]<m) {
+                m=v[i];
+                c++;
+            }
+        }
+    }
+    cout<<c<<endl;
+}
+} 
