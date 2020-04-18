@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+using namespace std;
+#define ll long long
+main() 
+{ ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+int t;
+ll n,k,c,i,j,ai,b,l,r;
+cin>>t;
+while(t--){   
+    cin>>n>>k; ll a[n]; r=k;
+    for(i=0;i<n;i++) cin>>a[i]; 
+    i=0;
+    k=k%(n*3);
+    for(j=0;j<k;j++){
+     ai=a[i%n]; b=a[n-(i%n)-1];
+     a[i]=ai^b;
+     i++;
+     if(i==n) i=0;
+     /*for(l=0;l<n;l++)
+    cout<<a[l]<<" ";
+    cout<<endl;*/
+    }
+    if(n%2!=0 && r>n/2) a[n/2]=0;
+ for(i=0;i<n;i++)
+    cout<<a[i]<<" ";
+    cout<<endl;
+} 
+}
