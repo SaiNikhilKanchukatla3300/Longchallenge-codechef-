@@ -1,0 +1,31 @@
+from itertools import permutations 
+t=int(input())
+while t>0:
+    n=int(input())
+    a=input()
+    b=input()
+    p1 = permutations(a)
+    p2 = permutations(b)
+    l1=[]
+    l2=[]
+    d=dict()
+    for perm in list(p1): 
+        #print (''.join(perm))
+        l1.append(''.join(perm))
+    for perm in list(p2): 
+        #print (''.join(perm))
+        l2.append(''.join(perm))
+    #print(l1,l2)
+    for i in l1:
+        for j in l2:
+            c=[0]*len(i)
+            s1=list(map(int,i))
+            s2=list(map(int,j))
+            s=''
+            for k in range(len(i)):
+                c[k]=s1[k]^s2[k]
+                s+=str(c[k])
+            if s not in d:
+                d[s]=0
+    print(len(d))
+    t-=1
