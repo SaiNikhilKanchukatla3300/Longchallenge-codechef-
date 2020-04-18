@@ -1,0 +1,18 @@
+t=int(input())
+while t>0:
+    n=int(input())
+    d=dict()
+    for i in range(n):
+        k,v=map(int,input().split())
+        if k<=8:
+            if (k in d.keys()):
+                if v>d[k]:
+                    d[k]=v
+            else:
+                d[k]=v
+    s=0
+    for i in d.keys():
+        s+=d[i]
+    print(s)
+    t-=1
+        
