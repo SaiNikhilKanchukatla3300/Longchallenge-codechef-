@@ -1,0 +1,16 @@
+a=list([0,0])
+for i in range(2,128):
+    f=a[:i-1]
+    #print(f,a,i)
+    if(a[i-1] in f):
+        res = len(f) - 1 - f[::-1].index(a[i-1]) 
+        a.append(i-1-res)
+    else:
+        a.append(0)
+#print(a)
+t=int(input())
+while t>0:
+    n=int(input())
+    s=list(a[:n])
+    print(s.count(s[n-1]))
+    t-=1
