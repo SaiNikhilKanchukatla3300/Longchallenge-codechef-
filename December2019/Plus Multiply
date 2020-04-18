@@ -1,0 +1,13 @@
+t=int(input())
+while t>0:
+    n=int(input())
+    l=list(map(int,input().split()))
+    c=l.count(2)-1
+    z=l.count(0)-1
+    s=0
+    if c>0:
+        s+=(c*(c+1))/2
+    if z>0:
+        s+=(z*(z+1))/2
+    print(int(s))
+    t-=1
