@@ -1,0 +1,27 @@
+def call(a,s):
+    c=0
+    t=-1
+    d=len(s)
+    for i in range(len(s)):
+        if a==s[i]:
+            if t==-1:
+                t=i
+            else:
+                n=i-t
+                t=i
+                d=min(d,n)
+    return d
+t=int(input())
+while t>0:
+    n=int(input())
+    s=input()
+    c=100000
+    for i in range(97,123):
+        if chr(i) in s:
+            if s.rfind(chr(i))!=s.find(chr(i)):
+                c=min(c,call(chr(i),s))
+    if c==100000:
+        print('0')
+    else:
+        print(n-c)
+    t-=1
